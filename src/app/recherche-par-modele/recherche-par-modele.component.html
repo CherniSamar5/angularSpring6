@@ -1,0 +1,42 @@
+<!-- <div class="container">
+  <form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2 mt-2 ">
+  <label>Modele Voiture</label>
+  <input type="text" class="form-control" [(ngModel)]="modeleVoiture" name="modeleVoiture" class="form-control">
+  <button type="submit" (click)="rechercherVoits()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+  </div>
+  </form> -->
+  <!-- <div class="container">
+  <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2 ">
+    <label>Modele Voiture en tapant</label>
+    <input   class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+    </div>
+    </form> -->
+    <div class="container">
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Modele Voiture en tapant</label>
+        <input #modele [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+        </form>
+  <div class="card shadow mb-4">
+  <div class="card-body">
+  <table class="table table-striped">
+  <thead>
+    <tr> <th>Id</th><th>Modele</th> <th>Prix</th> <th>Marque</th><th>Date Fabrication</th> </tr>
+
+  </thead>
+  <tbody *ngFor="let voiture of voitures  | filter: searchTerm ">
+    <tr>
+      <td>{{voiture.idVoiture}}</td>
+  <td>{{voiture.modeleVoiture}}</td>
+  <td>{{voiture.prixVoiture}}</td>
+  <td>{{voiture.marque!.nomMarque}}</td>
+  <td>{{voiture.dateFabrication | date:'dd/MM/yyyy'}}</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      </div>
+

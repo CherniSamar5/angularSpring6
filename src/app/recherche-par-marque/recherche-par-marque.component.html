@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <label>Marques </label>
+    <select class="form-control form-control-lg" id="idMarque" name="idMarque"
+      [(ngModel)]="idMarque" (change)="onChange()" >
+         <option *ngFor="let marq of marques" [value]="marq.idMarque" >
+              {{marq.nomMarque}}
+        </option>
+    </select>
+  </div>
+
+  <div class="card shadow mb-4">
+  <div class="card-body">
+  <table class="table table-striped">
+  <tr> <th>Id</th><th>Modele</th> <th>Prix</th> <th>Marque</th><th>Date Fabrication</th> </tr>
+  <tbody *ngFor="let voiture of voitures">
+  <tr >
+  <td>{{voiture.idVoiture}}</td>
+  <td>{{voiture.modeleVoiture}}</td>
+  <td>{{voiture.prixVoiture}}</td>
+  <td>{{voiture.marque!.nomMarque}}</td>
+  <td>{{voiture.dateFabrication | date:'dd/MM/yyyy'}}</td>
+
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+  </div>

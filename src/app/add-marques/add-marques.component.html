@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div>
+  <h2>Ajouter une Marque :</h2>
+  </div>
+  <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Marque</label>
+    <input type="text" [(ngModel)]="newMarque.idMarque"
+    name="idMarque" class="form-control">
+    </div>
+    <div  class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Marque</label>
+    <input type="text"[(ngModel)]= "newMarque.nomMarque"
+    name="nomMarque" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Description Marque</label>
+    <input type="text" [(ngModel)]= "newMarque.descriptionMarque"
+    name="descriptionMarque" class="form-control">
+    </div>
+
+    <div class="mt-2">
+      <button type="submit" (click)="addMarque()"class="btn btn-success">Ajouter</button>
+        <div *ngIf="showMessage">
+          <h3>{{message}}</h3>
+        </div>
+    </div>
+    </form>
+    </div>
